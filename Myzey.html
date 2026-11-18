@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+<link rel="stylesheet" href="style.css">
+<script src="conditions.js" defer></script>
+<script src="catalog.js" defer></script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Музей — Музеи Санкт-Петербурга · Вариант 11</title>
+    <style>
+
+     body {
+    max-width: 100%;
+    margin: 0;
+}
+
+
+        p {
+            font-size: 18px;
+        }
+
+        .main-content img {
+            float: left;
+            max-width: 100%;
+            width: 240px;
+            margin: 0 15px 10px 0;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .main-content img {
+                float: none;
+                width: 100%;
+                margin: 0 0 15px 0;
+            }
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #176B64;
+            color: #ffffff;
+            border: 1px solid #176B64;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            margin-bottom: 10px;
+     
+        }
+
+        .btn:hover {
+            background-color: #e9ecef;
+            color: #000;
+        }
+
+        #status {
+            background: #eef7f6;
+            border-left: 4px solid #176B64;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #176B64;
+        }
+
+        #show-names,
+        #hide-names {
+            padding: 8px 16px;
+            background-color: #176B64;
+            color: #fff;
+            border: 1px solid #176B64;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 8px;
+            margin-bottom: 10px;
+            transition: all 0.2s ease;
+        }
+
+        #show-names:hover,
+        #hide-names:hover {
+            background-color: #e9ecef;
+            color: #000;
+        }
+
+        #names {
+            padding-left: 22px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #3e2723;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="page-wrapper">
+
+        <aside class="side-banner left-banner">
+            <div class="banner-card">
+                <img src="images/mountains.png" alt="Эрмитаж">
+                <h4>Эрмитаж</h4>
+                <p>Скидка 10% на утренние экскурсии!</p>
+            </div>
+            <div class="banner-card">
+                <img src="images/mountain1.png" alt="Исаакиевский собор">
+                <h4>Исаакий</h4>
+                <p>Лучший вид на город с колоннады.</p>
+            </div>
+        </aside>
+
+
+        <div class="main-content">
+            <header>
+                <h1>Музей</h1>
+                <p>Выберите музей</p>
+                <nav>
+                    <a href="Myzey.html" aria-current="page">Главная</a>
+                    <a href="catalog.html">Каталог</a>
+                    <a href="form.html">Форма</a>
+                </nav>
+            </header>
+
+            <main class="page">
+                <h2>Маршруты прогулки по музею</h2>
+
+                <p id="status" role="status"></p>
+
+                <div style="
+                    position: relative;
+                    background-image: linear-gradient(rgba(62, 39, 35, 0.7), rgba(62, 39, 35, 0.7)), url('images/non.png');
+                    background-size: cover;
+                    background-position: center;
+                    padding: 40px 20px;
+                    border-radius: 12px;
+                    margin-bottom: 30px;
+                    text-align: center;
+                    color: #fff;
+                    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+                ">
+                    <h2 style="color: #fff; margin-top: 0; font-size: 28px; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">Откройте тайны</h2>
+                    <p style="font-size: 18px; margin-bottom: 20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Экскурсии по самым величественным музеям города с профессиональным гидом!</p>
+                    <a href="form.html" style="
+                        display: inline-block; 
+                        background-color: #f4ebd9; 
+                        color: #5d4037; 
+                        padding: 12px 25px; 
+                        text-decoration: none; 
+                        border-radius: 6px; 
+                        font-weight: bold; 
+                        font-size: 18px;
+                        transition: 0.3s;
+                    " onmouseover="this.style.backgroundColor='#fff'; this.style.transform='scale(1.05)'" onmouseout="this.style.backgroundColor='#f4ebd9'; this.style.transform='scale(1)'">Забронировать место</a>
+                </div>
+
+                <h3>Список музеев каталога</h3>
+                <button id="show-names" type="button">Показать названия</button>
+                <button id="hide-names" type="button">Скрыть названия</button>
+                <ul id="names"></ul>
+
+                <img src="images/mountains.png" alt="Эрмитаж">
+                <h3>Государственный Эрмитаж в Санкт-Петербурге — роскошная сокровищница</h3>
+                <p>Интересные факты</p>
+                <p>Домик Петра I на Петровской набережной — самое старинное здание Петербурга. Он построен в 1703 году. Спустя полтора века вокруг деревянного здания возведен защитный кирпичный футляр с окнами. Здесь представлены сохранившиеся личные вещи императора. В 1941 году после начала Великой Отечественной войны большую часть коллекции Русского музея эвакуировали в Пермь (тогда город назывался Молотов). Оставшиеся экспонаты укрыли в подвалах дворца. За время войны ни одна картина не пострадала. В 2015 году первый филиал Русского музея открылся в Испании — в городе Малага, в Андалусии. Ежегодно здесь организуют три выставки, работает «Электронный Русский музей» с использованием современных электронных технологий</p>
+                <div class="clear"></div>
+
+                <img src="images/mountain.png" alt="Русский музей">
+                <h3>Государственный Русский музей в Санкт-Петербурге.</h3>
+                <p>Интересные факты</p>
+                <p>Большой Эрмитаж — первое здание в России, созданное специально для размещения художественных коллекций музея. За произведениями искусства здесь присматривают не только люди. На службе в Эрмитаже — около 50 кошек. Животные нужны, чтобы защитить экспонаты от мышей. Эта традиция сохраняется еще со времен правления Екатерины II. Один из самых известных шедевров Эрмитажа — «Даная» Рембрандта. В 1985 году психически нездоровый турист облил картину кислотой. 12 лет реставраторы восстанавливали картину. Сейчас она снова доступна для любования, только теперь защищена бронированным стеклом</p>
+                <div class="clear"></div>
+
+                <img src="images/mountain1.png" alt="Исаакиевский собор">
+                <h3>Исаакиевский собор в Санкт-Петербурге. Найдите свой вариант отдыха</h3>
+                <p>Интересные факты</p>
+                <p>Исаакиевский собор — самое тяжелое здание в Санкт-Петербурге. По сей день ему пророчат обрушение и уход в болото. Но он до сих пор крепко на земле. Многие из тех, кто побывал на освящении, все же не оценили Исаакиевский собор. Первое время из-за пропорций храм носил прозвище Чернильница. Однако сейчас его почитают как самый величественный в городе. По легенде, дом Романовых должен был пасть после снятия строительных лесов с собора. Окончательно их сняли в только в 1916 году, а в марте 1917-го Николай II отрекся от престола</p>
+                <div class="clear"></div>
+
+                <img src="images/mountain2.png" alt="Казанский собор">
+                <h3>Казанский собор в Санкт-Петербурге</h3>
+                <p>Интересные факты</p>
+                <p>Особенностью собора было то, что строили его исключительно из материалов отечественного производства. Ничего привозного, сплошное импортозамещение. Тут вам и известняк, и гранит и мрамор — все свое. А вот архитектура как раз, наоборот, далека от русской. Казанский собор строили в стиле ампир. Павел Первый хотел, чтобы храм напоминал Собор Святого Павла в Риме. Освятили храм в 1811 году, и через полгода сюда привезли Казанскую икону Божией матери</p>
+                <div class="clear"></div>
+
+                <img src="images/non2.png" alt="Ново-Иерусалимский монастырь">
+                <h3>Воскресенский Ново-Иерусалимский монастырь</h3>
+                <p>Интересные факты</p>
+                <p>Монастырь был основан в 1656 году Патриархом Никоном. Село Воскресенское было куплено в вотчину Иверского монастыря. В 1657 году храм освятили в присутствии царя Алексея Михайловича, который воскликнул: «Во истину благоговоли Бог исперва место сие предуготовать на создание монастыря; понеже прекрасно, подобно Иерусалиму». В 1666 году Патриарх Никон покидает монастырь, чтобы явиться на суд, после чего строительные работы на долгое время прекращаются.</p>
+                <div class="clear"></div>
+
+                <p><a href="form.html" class="btn">Записаться на экскурсию →</a></p>
+                <p><a href="page2.html" class="btn">На 2 страницу →</a></p>
+            </main>
+
+            <footer>
+                <p>Учебный прототип · Вариант 11</p>
+            </footer>
+        </div>
+
+
+        <aside class="side-banner right-banner">
+            <div class="banner-card">
+                <img src="images/mountain.png" alt="Русский музей">
+                <h4>Русский музей</h4>
+                <p>Новая выставка авангарда уже открыта! 20% при преведи друга</p>
+            </div>
+            <div class="banner-card">
+                <img src="images/mountain2.png" alt="Казанский собор">
+                <h4>Казанский собор</h4>
+                <p>Бесплатный вход для студентов при Пушкинской карты</p>
+            </div>
+        </aside>
+
+    </div> 
+</body>
+</html>

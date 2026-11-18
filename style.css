@@ -1,0 +1,428 @@
+
+@font-face {
+    font-family: 'MySiteFont';
+    src: url('fonts/MySiteFont-Regular.woff2') format('woff2'),
+         url('fonts/MySiteFont-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MySiteFont';
+    src: url('fonts/MySiteFont-Bold.woff2') format('woff2'),
+         url('fonts/MySiteFont-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'MySiteFont', Georgia, 'Times New Roman', Times, serif; 
+    color: #78350F;
+
+    background-image: 
+        linear-gradient(rgba(244, 235, 217, 0.3), rgba(244, 235, 217, 0.5)),
+        url('images/non3.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    
+    margin: 0;
+    padding: 40px 20px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+header, main, footer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-family: 'MySiteFont', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #78350F;
+}
+
+h1 {
+    border-bottom: 3px solid #8d6e63;
+    padding-bottom: 10px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0 30px;
+}
+
+nav a {
+    display: block;
+    padding: 10px 20px;
+    color: #183E39;
+    background-color: transparent;
+    border: 2px solid #8d6e63;
+    border-radius: 0;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    max-width: 100%;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background-color: #8d6e63;
+    color: #fff;
+}
+
+nav a[aria-current="page"] {
+    background-color: #5d4037;
+    color: #f4ebd9;
+    border-color: #5d4037;
+    cursor: default;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  max-width: 18rem;
+}
+
+@media (max-width: 600px) {
+    img {
+        float: none !important;
+        margin: 0 0 15px 0 !important;
+        width: 100% !important;
+    }
+}
+
+form {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+form p {
+    margin-bottom: 15px;
+}
+
+input[type="number"],
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 16px;
+    transition: border-color 0.2s ease;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #8d6e63;
+    box-shadow: 0 0 5px #8d6e634d;
+}
+
+
+form input:focus-visible,
+form select:focus-visible,
+form textarea:focus-visible,
+form button:focus-visible {
+    outline: 3px solid  #C2410C;
+    outline-offset: 2px;
+}
+
+form input[type="checkbox"]:focus-visible,
+form input[type="range"]:focus-visible {
+    outline: 3px solid #176B64;
+    outline-offset: 2px;
+}
+
+input[type="range"] {
+    width: 100%;
+    max-width: 320px;
+    margin-top: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+
+form .form-hint {
+    display: block;
+    margin-top: 4px;
+    font-size: 14px;
+    color: #666;
+}
+
+form fieldset {
+    margin: 0 0 1em;
+    padding: 8px 12px;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+}
+
+form legend {
+    padding: 0 4px;
+    font-weight: 600;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #183E39;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #176B64;
+}
+
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px; 
+    max-width: 1400px; 
+    margin: 0 auto;
+}
+
+.main-content {
+    max-width: 950px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.side-banner {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  
+    position: sticky;
+    top: 20px; 
+}
+
+.banner-card {
+    background-color: #FEF3C7;
+    border: 1px solid #FEF3C7;
+    border-radius: 9px;
+    padding: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.2s;
+    box-sizing: border-box; 
+}
+
+.banner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.banner-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: none;
+    box-shadow: none;
+}
+
+.banner-card h4 {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #78350F;
+}
+
+.banner-card p {
+    font-size: 13px;
+    color: #78350F;
+    margin: 0;
+}
+
+@media (max-width: 1250px) {
+    .side-banner {
+        display: none;
+    }
+}
+
+.card {
+  border: 1px solid #94A3B8;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: #ffffff; 
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+main.page {
+  width: 92%;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #FEF3C7;
+  border-radius: 10px;
+}
+
+.request-form {
+  background-color: #FFFFFF;
+  border: 1px solid #94A3B8;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.form-field {
+  margin: 0 0 1rem;
+}
+.form-field > label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: bold;
+}
+.request-form input,
+.request-form select,
+.request-form textarea,
+.request-form button {
+  font: inherit;
+}
+
+.request-form select,
+.request-form input[type="number"],
+.request-form textarea {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #64748B;
+  border-radius: 0.35rem;
+}
+.request-form input[type="range"] {
+  width: 100%;
+}
+.request-form textarea {
+  resize: vertical;
+}
+
+.request-form button {
+  padding: 0.65rem 1rem;
+  border: 2px solid #176B64;
+  border-radius: 0.35rem;
+  background-color: #176B64;
+  color: #FFFFFF;
+}
+
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid #C2410C;
+  outline-offset: 3px;
+}
+
+.request-form input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.request-form input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    background: #cbd5e1;
+    border-radius: 5px; 
+}
+
+
+.request-form input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px; 
+    width: 20px; 
+    background-color: #176B64;
+    border-radius: 50%; 
+    margin-top: -6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: transform 0.1s ease;
+}
+
+.request-form input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    background-color: #0056b3;
+}
+
+
+.request-form input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    background: #cbd5e1;
+    border-radius: 5px;
+}
+
+
+.request-form input[type="range"]::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    background-color: #176B64;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.products > .card {
+    flex: 1 1 16rem;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+    main.page {
+        padding: 0.75rem;
+    }
+    .products > .card {
+        flex-basis: 100%;
+    }
+}

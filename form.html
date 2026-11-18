@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+<link rel="stylesheet" href="style.css">
+<script src="form.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Форма — Музеи Санкт-Петербурга · Вариант 11</title>
+    <style>
+        body {
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+background-color: #EAF7F5;
+color: #183E39;
+}
+
+        p {
+            font-size: 18px;
+        }
+
+                img {
+            float: left;
+            max-width: 100%;
+            width: 240px;
+            margin: 0 15px 10px 0;
+            border-radius: 8px;
+        }
+
+
+        @media (max-width: 600px) {
+            img {
+                float: none;
+                width: 100%;
+                margin: 0 0 15px 0;
+            }
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        article {
+            margin-bottom: 30px;
+        }
+
+        #result {
+            margin-top: 18px;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-weight: 600;
+            min-height: 22px;
+            background: #e6f4ea;
+            border-left: 4px solid #2e7d32;
+            color: #2e7d32;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <p><strong>Музей</strong></p>
+        <nav>
+            <a href="Myzey.html">Главная</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="form.html" aria-current="page">Форма</a>
+        </nav>
+    </header>
+
+    <main class="page">
+        <h1>Запись на экскурсию</h1>
+        <p>Учебная форма. Данные пока не сохраняются.</p>
+
+        <form class="request-form" method="get">
+
+            <p class="form-field">
+                <label for="item">Выберите музей</label>
+                <select id="item" name="item" required>
+                    <option value="">Выберите из списка</option>
+                    <option value="item1">Государственный Эрмитаж</option>
+                    <option value="item2">Русский музей</option>
+                    <option value="item3">Исаакиевский собор</option>
+                    <option value="item4">Казанский собор</option>
+                    <option value="item5">Ново-Иерусалимский монастырь</option>
+                </select>
+            </p>
+
+            <p class="form-field">
+                <label for="quantity">Количество человек</label>
+                <input id="quantity" name="quantity" type="number" min="1" step="1" value="2" required>
+            </p>
+
+            <p class="form-field">
+                <label for="notes">Комментарий к заявке</label>
+                <textarea id="notes" name="notes" rows="4" placeholder="Например, удобная дата экскурсии или нужен ли гид"></textarea>
+            </p>
+
+            <fieldset>
+                <legend>Дополнительные возможности</legend>
+
+                <p>
+                    <input id="extra1" name="extra1" type="checkbox" value="yes" checked>
+                    <label for="extra1">Нужен экскурсовод</label>
+                </p>
+
+                <p>
+                    <input id="extra2" name="extra2" type="checkbox" value="yes">
+                    <label for="extra2">Разрешение на фотосъемку</label>
+                </p>
+            </fieldset>
+
+            <p class="form-field">
+                <label for="level">Насколько вы любите музеи?</label><br>
+                <input id="level" name="level" type="range" min="1" max="5" step="1" value="3"
+                       aria-describedby="level-hint">
+                <span class="form-hint" id="level-hint">1 — Хорошо; 5 — Очень люблю</span>
+            </p>
+
+            <p>
+                <label for="feedback-email">Электронная почта для обратной связи</label>
+                <input id="feedback-email" name="feedback_email" type="email" placeholder="museym@yandex.ru"
+                       aria-describedby="email-hint">
+                <span class="form-hint" id="email-hint">Необязательно. Укажите адрес, если хотите получить ответ по заявке. Пример: student@example.com</span>
+            </p>
+
+            <p>
+                <button type="submit">Проверить заявку</button>
+            </p>
+
+            <p id="result" role="status" aria-live="polite"></p>
+
+        </form>
+
+        <p style="margin-top: 20px;">
+            <a href="Myzey.html" class="btn btn-blue" style="text-decoration: none; padding: 10px 20px; background-color:  #176B64; color: white; border-radius: 5px;">← Назад</a>
+        </p>
+    </main>
+
+    <footer>
+        <p>Учебный прототип · Вариант 11</p>
+    </footer>
+
+</body>
+
+</html>
