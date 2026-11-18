@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Музеи Санкт-Петербурга · Вариант 11</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        img {
+            float: left;
+            max-width: 100%;
+            width: 240px;
+            margin: 0 15px 10px 0;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 600px) {
+            img {
+                float: none;
+                width: 100%;
+                margin: 0 0 15px 0;
+            }
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        article {
+            margin-bottom: 30px;
+        }
+
+        /* Поле поиска */
+        .search-field {
+            margin: 0 0 1.5rem;
+        }
+        .search-field label {
+            display: block;
+            margin-bottom: 0.35rem;
+            font-weight: bold;
+        }
+        .search-field input {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid #64748B;
+            border-radius: 0.35rem;
+            font: inherit;
+        }
+
+        /* Статус под каталогом */
+        #status {
+            font-weight: 600;
+            color: #176B64;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="Myzey.html">Главная</a>
+            <a href="catalog.html" aria-current="page">Каталог</a>
+            <a href="form.html">Форма</a>
+        </nav>
+    </header>
+
+    <main class="page">
+        <h1>Каталог музеев</h1>
+        <p>Четыре музея Санкт-Петербурга с маршрутами для прогулки: Государственный Эрмитаж, Русский музей, Исаакиевский собор, Казанский собор.</p>
+
+        <p class="search-field">
+            <label for="search">Поиск по названию</label>
+            <input id="search" type="search" placeholder="Введите часть названия">
+        </p>
+
+        <div id="catalog-list" class="products"></div>
+
+        <p id="status" role="status" aria-live="polite"></p>
+
+        <p><a href="form.html" class="btn">Записаться на экскурсию →</a></p>
+    </main>
+
+    <footer>
+        <p>Учебный прототип · Вариант 11</p>
+    </footer>
+
+    <script src="catalog-page.js" defer></script>
+</body>
+
+</html
