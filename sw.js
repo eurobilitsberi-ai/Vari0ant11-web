@@ -35,6 +35,8 @@ const FILES = [
   "./images/non1.png",
   "./images/non2.png",
   "./images/non3.png",
+  "./fonts/MyCustomFont.ttf",
+  "./fonts/MySiteFont-Regular.ttf",
 ];
 
 self.addEventListener("install", (event) => {
