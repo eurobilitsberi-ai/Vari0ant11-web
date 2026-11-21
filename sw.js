@@ -19,6 +19,18 @@ const FILES = [
   "./page2.html",
   "./peterhof.html",
   "./pushkin.html", 
+  "./images/moun.png",
+  "./images/moun2.png",
+  "./images/moun3.png",
+  "./images/moun4.png",
+  "./images/mountain.png",
+  "./images/mountain1.png",
+  "./images/mountain2.png",
+  "./images/mountains.png",
+  "./images/non.png",
+  "./images/non1.png",
+  "./images/non2.png",
+  "./images/non3.png",
 ];
 
 self.addEventListener("install", (event) => {
